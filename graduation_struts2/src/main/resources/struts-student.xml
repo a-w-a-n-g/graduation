@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+        
+<struts>
+
+	<package name="student" extends="index">
+	
+		<action name="student_index">
+			<result>/WEB-INF/pages/student/student-index.jsp</result>
+			<result name="index" type="redirect">/index.jsp</result>
+			<interceptor-ref name="studentInterceptor"></interceptor-ref>
+		</action>
+		
+		<action name="selectTopic">
+			<result>/WEB-INF/pages/student/selectTopic.jsp</result>
+		</action>
+		<action name="selectedTopic">
+			<result>/WEB-INF/pages/student/selectedTopic.jsp</result>
+		</action>
+		<action name="commitFile">
+			<result>/WEB-INF/pages/student/commitFile.jsp</result>
+		</action>
+		
+		<action name="getAllTopic" class="selectTopicAction" method="getAllTopic"></action>
+		<action name="select" class="selectTopicAction" method="selectTopic"></action>
+		
+		<action name="getSelectedTopic" class="selectedTopicAction" method="getSelectedTopic"></action>
+		
+		<action name="getAllFile" class="commitFileAction" method="getAllFile"></action>
+		<action name="commitDescription" class="commitFileAction" method="commitDescription"></action>
+		<action name="commitBernal" class="commitFileAction" method="commitBernal"></action>
+		<action name="commitInterim" class="commitFileAction" method="commitInterim"></action>
+		<action name="commitGuidance" class="commitFileAction" method="commitGuidance"></action>
+		<action name="commitPaper" class="commitFileAction" method="commitPaper"></action>
+	</package>
+
+</struts>

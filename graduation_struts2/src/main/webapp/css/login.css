@@ -1,0 +1,50 @@
+body{
+	background-image:url(../pictures/gra.jpg);
+	background-size:100%;
+	background-repeat:no-repeat
+	}
+ul{
+	list-style:none;
+	display:inline
+}
+li{
+	height:30px;
+}
+.login{
+	position:fixed;
+	width:30%;
+	height:20%;
+	left:100px;
+	top:300px;
+	color:#908080
+	}
+.user{
+	padding-left:20px;
+　　border:1px solid #ddd;
+　　margin: 30px;
+　　width: 220px;
+}
+.icon-user{
+	position: absolute;left: 0；z-index:5;
+	background-image: url(../pictures/user.png); /*引入图片图片*/
+	background-repeat: no-repeat; /*设置图片不重复*/
+	background-position: 3px 3px; /*图片显示的位置*/
+	width: 20px; /*设置图片显示的宽*/
+	height: 20px; /*图片显示的高*/
+}
+.icon-psw{
+	position: absolute;left: 0；z-index:5;
+	background-image: url(../pictures/psw.png); /*引入图片图片*/
+	background-repeat: no-repeat; /*设置图片不重复*/
+	background-position: 3px 3px; /*图片显示的位置*/
+	width: 20px; /*设置图片显示的宽*/
+	height: 20px; /*图片显示的高*/
+}
+.id{
+	cursor:pointer
+}
+.submit{
+	width:100px;
+	height:30px;
+	cursor:pointer
+}

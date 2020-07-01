@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.convention.result.path" value="/WEB-INF/pages" />
+	<constant name="struts.multipart.saveDir" value="H:\Workspace\GraduationProject\graduation\file"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	
+	<include file="struts-admin.xml"></include>
+	<include file="struts-student.xml"></include>
+	<include file="struts-teacher.xml"></include>
+	
+	<package name="interceptors" extends="struts-default">
+		
+		<interceptors>
+			<interceptor name="studentLoginValidate" class="com.graduation.struts2.interceptor.StudentLoginInterceptor"></interceptor>
+			<interceptor name="teacherLoginValidate" class="com.graduation.struts2.interceptor.TeacherLoginInterceptor"></interceptor>
+			<interceptor name="adminLoginValidate" class="com.graduation.struts2.interceptor.AdminLoginInterceptor"></interceptor>
+			
+			<interceptor-stack name="studentInterceptor">
+				<interceptor-ref name="studentLoginValidate"></interceptor-ref>
+			</interceptor-stack>
+			
+			<interceptor-stack name="teacherInterceptor">
+				<interceptor-ref name="teacherLoginValidate"></interceptor-ref>
+			</interceptor-stack>
+			
+			<interceptor-stack name="adminInterceptor">
+				<interceptor-ref name="adminLoginValidate"></interceptor-ref>
+			</interceptor-stack>
+			
+		</interceptors>
+		
+	</package>
+	
+	<package name="index" extends="interceptors">
+	
+		<!-- 配置默认action -->
+		<default-action-ref name="index"/>
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+		
+		<!-- 通过通配方式跳转，防止页面地址乱请求 -->
+    	<!-- 只要找不到对应的action都自动跳转到index，可以再写一个404的action，自动跳转到404 -->
+		<action name="*">
+			<result type="redirect">index</result>
+		</action>
+	
+		<action name="login" class="loginAction"> <!-- 此处class指向spring配置文件里定义的bean，若是配置类名，就相当于new一个，而不是从spring容器中加载已经配置好的对象。 -->
+			<result name="error">/index.jsp</result>			<!-- 默认dispatcher类型，RequestDispatcher使用forward方法 -->
+			<result name="student" type="redirectAction">		<!-- 此类型response使用sendRedirect方法 -->
+				<param name="actionName">student_index</param>
+			</result>
+			<result name="teacher" type="redirectAction">
+				<param name="actionName">teacher_index</param>
+			</result>
+			<result name="admin" type="redirectAction">
+				<param name="actionName">admin_index</param>
+			</result>
+		</action>
+		
+		<action name="validateCode" class="codeImageAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">imageStream</param>
+				<param name="Pragma">no-cache</param>
+				<param name="Cache-Control">no-cache</param>
+				<param name="expries">-1</param>
+			</result>
+		</action>
+		
+		<!-- {1}代表前面name中的*所指的字符串 -->
+		<action name="*" class="" method="{1}"></action>
+	</package>
+</struts>

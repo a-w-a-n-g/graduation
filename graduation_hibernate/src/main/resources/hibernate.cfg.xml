@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- 该配置文件仅用于测试用所以不参与打包 -->
+<hibernate-configuration>
+	<session-factory>
+		<property name="show_sql">true</property>            <!-- 在运行时在控制台输出执行的sql语句 -->
+		<property name="myeclipse.connection.profile">hibernate</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/graduation</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">awang</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<mapping class="com.graduation.hibernate.entity.Administrator" />
+		<mapping class="com.graduation.hibernate.entity.Department" />
+		<mapping class="com.graduation.hibernate.entity.ClassNum" />
+		<mapping class="com.graduation.hibernate.entity.LoginLog" />
+		<mapping class="com.graduation.hibernate.entity.Major" />
+		<mapping class="com.graduation.hibernate.entity.Notice" />
+		<mapping class="com.graduation.hibernate.entity.Student" />
+		<mapping class="com.graduation.hibernate.entity.Teacher" />
+		<mapping class="com.graduation.hibernate.entity.Topic" />
+		<mapping class="com.graduation.hibernate.entity.ModifyTopic" />
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+        
+<struts>
+
+	<package name="teacher" extends="index">
+		
+		<action name="teacher_index">
+			<result>/WEB-INF/pages/teacher/teacher-index.jsp</result>
+			<result name="index" type="redirect">/index.jsp</result>
+			<interceptor-ref name="teacherInterceptor"></interceptor-ref>
+		</action>
+		
+		<action name="tchCheck">
+			<result>/WEB-INF/pages/teacher/check.jsp</result>
+		</action>
+		<action name="manageTopic">
+			<result>/WEB-INF/pages/teacher/manageTopic.jsp</result>
+		</action>
+		<action name="operationRecord">
+			<result>/WEB-INF/pages/teacher/operationRecord.jsp</result>
+		</action>
+		<action name="checkFile">
+			<result>/WEB-INF/pages/teacher/checkFile.jsp</result>
+		</action>
+		
+		<action name="getAllPassTopic" class="manageTopicAction" method="getAllPassTopic"></action>
+		<action name="getAllModifyTopic" class="manageTopicAction" method="getAllModifyTopic"></action>
+		<action name="insertTopic" class="manageTopicAction" method="insertTopic"></action>
+		<action name="updateTopic" class="manageTopicAction" method="updateTopic"></action>
+		<action name="deleteTopic" class="manageTopicAction" method="deleteTopic"></action>
+		
+		<action name="getAllTchCheck" class="manageTchCheckAction" method="getAllTchCheck"></action>
+		<action name="tchAgreeModify" class="manageTchCheckAction" method="agreeModify"></action>
+		<action name="tchDisagreeModify" class="manageTchCheckAction" method="disagreeModify"></action>
+		
+		<action name="getTchCheckFile" class="checkFileAction" method="getTchCheckFile"></action>
+		<action name="agreeFile" class="checkFileAction" method="agreeFile"></action>
+		<action name="disagreeFile" class="checkFileAction" method="disagreeFile"></action>
+		
+		<action name="downloadFile" class="downloadFileAction" method="downloadFile">
+			<result name="success" type="stream">
+        		<!-- 设置返回的文件类型 -->
+        		<param name="contentType">${contentType}</param> 
+        		<!-- 设置获取文件流的方法 -->
+        		<param name="inputName">inputStream</param> 
+        		<!--添加参数，即就是下载的名称-->  
+        		<param name="contentDisposition">${contentDisposition}</param>
+        		<!-- bufferSize 设置缓冲区字节大小默认是1024 -->
+    		</result>
+		</action>
+		
+	</package>
+
+</struts>

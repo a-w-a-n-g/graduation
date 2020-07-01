@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>graduation_config</artifactId>
+  <name>Maven Quick Start Archetype</name>
+  
+  <parent>
+    <groupId>com.awang.graduation</groupId>
+    <artifactId>graduation</artifactId>
+    <version>V1.0</version>
+  </parent>
+  
+  <dependencies>
+  
+    <dependency>
+    	<groupId>commons-logging</groupId>
+    	<artifactId>commons-logging</artifactId>
+    	<version>${commons-logging.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>log4j</groupId>
+    	<artifactId>log4j</artifactId>
+    	<version>${log4j.version}</version>
+	</dependency>
+    
+  </dependencies>
+  
+  <build>
+		<finalName>graduation_config</finalName>
+		<!-- maven项目默认只会解析pom中的properties中的属性，所以需要把其他资源文件复制到maven编译输出目录中 -->
+		<resources>
+			<!-- 指定 src/main/resources下所有文件及文件夹为资源文件 -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<targetPath>${project.build.directory}/classes</targetPath>  <!-- target/classes -->
+				<includes>
+					<include>*.properties</include>
+				</includes>
+				<!-- filtering的作用是用环境变量、pom文件里定义的属性和指定文件里的属性
+				替换directory下属性文件中的占位符，即把属性文件中的${}换成具体属性值 -->
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+  
+</project>
