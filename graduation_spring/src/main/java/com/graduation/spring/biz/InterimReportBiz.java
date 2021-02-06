@@ -14,12 +14,12 @@ import com.graduation.hibernate.entity.InterimReport;
 
 public interface InterimReportBiz {
 
-	public boolean insertData(InterimReport data);
+	boolean insertData(InterimReport data);
 	
-	public ArrayList<InterimReport> getData(Integer topicId);
+	ArrayList<InterimReport> getData(Integer topicId);
 	
-	public boolean saveData(InterimReport data);
+	boolean saveData(InterimReport data);
 	
-	public InterimReport getDataById(Integer id);
+	InterimReport getDataById(Integer id);
 	
 }

@@ -14,30 +14,30 @@ import com.graduation.hibernate.entity.Topic;
 
 public interface TopicBiz {
 
-	public ArrayList<Topic> getAllStuTopic(String department);
+	ArrayList<Topic> getAllStuTopic(String department);
 	
-	public ArrayList<Topic> getAllTchTopic(String teacherId);
+	ArrayList<Topic> getAllTchTopic(String teacherId);
 	
-	public ArrayList<Topic> getAllPassTopic(String teacherId);
+	ArrayList<Topic> getAllPassTopic(String teacherId);
 	
-	public ArrayList<Topic> likeSearch(String selection);
+	ArrayList<Topic> likeSearch(String selection);
 	
-	public boolean updateTopic(Topic topic);
+	boolean updateTopic(Topic topic);
 	
-	public boolean insertTopic(Topic topic);
+	boolean insertTopic(Topic topic);
 	
-	public boolean deteleTopic(Integer id);
+	boolean deteleTopic(Integer id);
 	
-	public ArrayList<Topic> getCheckTopic();
+	ArrayList<Topic> getCheckTopic();
 	
-	public Topic getTopicById(Integer id);
+	Topic getTopicById(Integer id);
 	
-	public boolean saveTopic(Topic topic);
+	boolean saveTopic(Topic topic);
 	
-	public boolean agreeInsert(Integer id, String opinion);
+	boolean agreeInsert(Integer id, String opinion);
 	
-	public boolean disagreeInsert(Integer id, String opinion);
+	boolean disagreeInsert(Integer id, String opinion);
 	
-	public Topic getSelectedTopic(String sid);
+	Topic getSelectedTopic(String sid);
 	
 }

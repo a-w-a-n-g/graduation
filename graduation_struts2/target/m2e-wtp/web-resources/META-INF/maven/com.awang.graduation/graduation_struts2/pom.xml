@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>graduation_struts2</artifactId>
+  <packaging>war</packaging>
+  <name>graduation_struts Maven Webapp</name>
+  
+  <parent>
+    <groupId>com.awang.graduation</groupId>
+    <artifactId>graduation</artifactId>
+    <version>V1.0</version>
+  </parent>
+  
+  <dependencies>
+  
+  	<dependency>
+  		<groupId>com.awang.graduation</groupId>
+  		<artifactId>graduation_spring</artifactId>
+  		<version>${graduation_spring.version}</version>
+  	</dependency>
+  	
+  	<dependency>
+    	<groupId>asm</groupId>
+    	<artifactId>asm</artifactId>
+    	<version>${asm.version}</version>
+	</dependency>
+  
+  	<dependency>
+    	<groupId>asm</groupId>
+    	<artifactId>asm-commons</artifactId>
+    	<version>${asm-commons.version}</version>
+	</dependency>
+  	
+  	<dependency>
+    	<groupId>commons-fileupload</groupId>
+    	<artifactId>commons-fileupload</artifactId>
+    	<version>${commons-fileupload.version}</version>
+	</dependency>
+  	
+  	<dependency>
+    	<groupId>org.apache.commons</groupId>
+    	<artifactId>commons-lang3</artifactId>
+    	<version>${commons-lang3.version}</version>
+	</dependency>
+  	
+  	<dependency>
+    	<groupId>org.freemarker</groupId>
+    	<artifactId>freemarker</artifactId>
+    	<version>${freemarker.version}</version>
+	</dependency>
+	
+  	<dependency>
+    	<groupId>org.javassist</groupId>
+    	<artifactId>javassist</artifactId>
+    	<version>${javassist.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>ognl</groupId>
+    	<artifactId>ognl</artifactId>
+    	<version>${ognl.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>servlet-api</artifactId>
+    	<version>${servlet-api.version}</version>
+    	<scope>provided</scope>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.apache.struts</groupId>
+    	<artifactId>struts2-convention-plugin</artifactId>
+    	<version>${struts2-convention-plugin.version}</version>
+	</dependency>
+	
+	<!-- JSTL -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+	<!-- JSTL实现包 -->
+	<dependency>
+		<groupId>org.apache.taglibs</groupId>
+		<artifactId>taglibs-standard-impl</artifactId>
+		<version>1.2.5</version>
+	</dependency>
+	
+	<!-- json依赖 -->
+	<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>20180813</version><!--注意：20160810版本不支持JSONArray-->
+	</dependency>
+	
+  </dependencies>
+  
+  <build>
+    <finalName>graduation_struts2</finalName>
+  </build>
+  
+</project>

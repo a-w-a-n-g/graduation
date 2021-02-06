@@ -14,20 +14,20 @@ import com.graduation.hibernate.entity.Student;
 
 public interface StudentBiz {
 
-	public Student loginValidate(String name, String password);
+	Student loginValidate(String name, String password);
 	
-	public ArrayList<Student> getAllStu();
+	ArrayList<Student> getAllStu();
 	
-	public ArrayList<Student> likeSearch(String selection);
+	ArrayList<Student> likeSearch(String selection);
 	
-	public boolean updateStudent(Student student);
+	boolean updateStudent(Student student);
 	
-	public boolean deleteStudent(Long id);
+	boolean deleteStudent(Long id);
 	
-	public boolean updatePassword(String id, String psw);
+	boolean updatePassword(String id, String psw);
 	
-	public Student getStudentById(Long id);
+	Student getStudentById(Long id);
 	
-	public boolean selectTopic(Long stuId, Integer topicId);
+	boolean selectTopic(Long stuId, Integer topicId);
 	
 }

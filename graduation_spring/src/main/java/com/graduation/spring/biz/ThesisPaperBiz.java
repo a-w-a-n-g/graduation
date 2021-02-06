@@ -14,12 +14,12 @@ import com.graduation.hibernate.entity.ThesisPaper;
 
 public interface ThesisPaperBiz {
 
-	public boolean insertData(ThesisPaper data);
+	boolean insertData(ThesisPaper data);
 	
-	public ArrayList<ThesisPaper> getDataByTopicId(Integer topicId);
+	ArrayList<ThesisPaper> getDataByTopicId(Integer topicId);
 	
-	public boolean saveData(ThesisPaper data);
+	boolean saveData(ThesisPaper data);
 	
-	public ThesisPaper getDataById(Integer id);
+	ThesisPaper getDataById(Integer id);
 	
 }

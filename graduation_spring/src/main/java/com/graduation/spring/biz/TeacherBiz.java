@@ -15,22 +15,22 @@ import com.graduation.hibernate.entity.Topic;
 
 public interface TeacherBiz {
 
-	public Teacher loginValidate(String name, String password);
+	Teacher loginValidate(String name, String password);
 	
-	public ArrayList<Teacher> getAllTch();
+	ArrayList<Teacher> getAllTch();
 	
-	public ArrayList<Teacher> likeSearch(String selection);
+	ArrayList<Teacher> likeSearch(String selection);
 	
-	public Teacher searchOne(String teacherId);
+	Teacher searchOne(String teacherId);
 	
-	public boolean insertTch(Teacher teacher);
+	boolean insertTch(Teacher teacher);
 	
-	public boolean updateTch(Teacher teacher);
+	boolean updateTch(Teacher teacher);
 	
-	public boolean deleteTeacher(String id);
+	boolean deleteTeacher(String id);
 	
-	public boolean updatePassword(String id, String psw);
+	boolean updatePassword(String id, String psw);
 	
-	public boolean addTopic(Topic topic, String teacherId);
+	boolean addTopic(Topic topic, String teacherId);
 	
 }

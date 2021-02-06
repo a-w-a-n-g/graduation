@@ -10,8 +10,8 @@ package com.graduation.spring.biz;
 
 public interface AdministratorBiz {
 
-	public String loginValidate(String name, String password);
+	String loginValidate(String name, String password);
 	
-	public boolean updatePassword(String name, String psw);
+	boolean updatePassword(String name, String psw);
 	
 }

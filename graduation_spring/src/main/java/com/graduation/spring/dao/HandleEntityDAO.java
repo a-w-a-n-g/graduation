@@ -14,30 +14,30 @@ import javax.persistence.criteria.CriteriaQuery;
 
 public interface HandleEntityDAO {
 
-	public HandleEntityDAO setType(String entityClassName);
+	HandleEntityDAO setType(String entityClassName);
 	
-	public HandleEntityDAO setData(Object entity);
+	HandleEntityDAO setData(Object entity);
 	
-	public HandleEntityDAO setBaseQuery();
+	HandleEntityDAO setBaseQuery();
 
-	public HandleEntityDAO setSelectProperties(String... selectProperties);
+	HandleEntityDAO setSelectProperties(String... selectProperties);
 	
-	public HandleEntityDAO setNullQuery(String property, boolean ifNull);
+	HandleEntityDAO setNullQuery(String property, boolean ifNull);
 	
-	public HandleEntityDAO setLikeQuery(String property, String pattern);
+	HandleEntityDAO setLikeQuery(String property, String pattern);
 	
-	public HandleEntityDAO setOrder(String property, String order);
+	HandleEntityDAO setOrder(String property, String order);
 	
-	public HandleEntityDAO setTimeQuery(String timeProperty, String beginTime, String endTime);
+	HandleEntityDAO setTimeQuery(String timeProperty, String beginTime, String endTime);
 	
-	public HandleEntityDAO setResultPage(int beginIndex, int num);
+	HandleEntityDAO setResultPage(int beginIndex, int num);
 	
-	public boolean insertEntity();
+	boolean insertEntity();
 	
-	public boolean updateEntity();
+	boolean updateEntity();
 	
-	public boolean deleteEntity();
+	boolean deleteEntity();
 	
-	public List getResultList();
+	List getResultList();
 	
 }

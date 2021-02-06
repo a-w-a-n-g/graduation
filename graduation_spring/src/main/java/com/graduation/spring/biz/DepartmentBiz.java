@@ -15,18 +15,18 @@ import com.graduation.hibernate.entity.Major;
 
 public interface DepartmentBiz {
 
-	public Department search(Department department);
+	Department search(Department department);
 	
-	public ArrayList<Department> likeSearch(String selection);
+	ArrayList<Department> likeSearch(String selection);
 	
-	public ArrayList<Department> getAllDpm();
+	ArrayList<Department> getAllDpm();
 	
-	public boolean updateDpm(Integer id, String name);
+	boolean updateDpm(Integer id, String name);
 	
-	public boolean deleteDpm(String name);
+	boolean deleteDpm(String name);
 	
-	public boolean insertDpm(Department department);
+	boolean insertDpm(Department department);
 	
-	public boolean addMajor(Major major, String departmentName);
+	boolean addMajor(Major major, String departmentName);
 	
 }

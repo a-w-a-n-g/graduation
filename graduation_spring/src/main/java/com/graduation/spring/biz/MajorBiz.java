@@ -15,16 +15,16 @@ import com.graduation.hibernate.entity.Major;
 
 public interface MajorBiz {
 
-	public Major search(Major major);
+	Major search(Major major);
 	
-	public ArrayList<Major> likeSearch(String selection);
+	ArrayList<Major> likeSearch(String selection);
 	
-	public ArrayList<Major> getAllMajor();
+	ArrayList<Major> getAllMajor();
 	
-	public boolean updateMajor(Major major);
+	boolean updateMajor(Major major);
 	
-	public boolean deleteMajor(Integer id);
+	boolean deleteMajor(Integer id);
 	
-	public boolean addClassNum(ClassNum classNum, String majorName);
+	boolean addClassNum(ClassNum classNum, String majorName);
 	
 }

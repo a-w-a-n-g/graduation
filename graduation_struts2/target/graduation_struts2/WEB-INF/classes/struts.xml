@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<package name="default" extends="struts-default">
+	
+		<interceptors>
+			<interceptor name="ifLogin" class="com.graduation.struts2.interceptor.CheckLogin"></interceptor>
+			
+			<interceptor-stack name="validate">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="ifLogin"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="login" class="loginAction"> <!-- 此处class指向spring配置文件里定义的bean，若是配置类名，就相当于new一个，而不是从spring容器中加载已经配置好的对象。 -->
+			<result name="index">/index.jsp</result>
+			<result name="error">/WEB-INF/pages/error.jsp</result>
+			<result name="success">/WEB-INF/pages/success.jsp</result>
+		</action>
+		
+		<action name="validateCode" class="codeImageAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">imageStream</param>
+				<param name="Pragma">no-cache</param>
+				<param name="Cache-Control">no-cache</param>
+				<param name="expries">-1</param>
+			</result>
+		</action>
+		
+		<!-- {1}代表前面name中的*所指的字符串 -->
+		<action name="*" class="" method="{1}"></action>
+	</package>
+</struts>

@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>graduation_hibernate</artifactId>
+  <name>graduation_hibernate</name>
+  
+  <parent>
+    <groupId>com.awang.graduation</groupId>
+    <artifactId>graduation</artifactId>
+    <version>V1.0</version>
+  </parent>
+  
+  <dependencies>
+  
+  	<dependency>
+  		<groupId>com.awang.graduation</groupId>
+  		<artifactId>graduation_config</artifactId>
+  		<version>${graduation_config.version}</version>
+  	</dependency>
+  
+  	<dependency>
+    	<groupId>antlr</groupId>
+    	<artifactId>antlr</artifactId>
+    	<version>${antlr.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>net.bytebuddy</groupId>
+    	<artifactId>byte-buddy</artifactId>
+    	<version>${byte-buddy.version}</version>
+	</dependency>
+
+	<dependency>
+    	<groupId>com.fasterxml</groupId>
+    	<artifactId>classmate</artifactId>
+    	<version>${classmate.version}</version>
+	</dependency>
+
+	<dependency>
+    	<groupId>dom4j</groupId>
+    	<artifactId>dom4j</artifactId>
+    	<version>${dom4j.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.hibernate.common</groupId>
+    	<artifactId>hibernate-commons-annotations</artifactId>
+    	<version>${hibernate-commons-annotations.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-core</artifactId>
+    	<version>${hibernate-core.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.jboss</groupId>
+    	<artifactId>jandex</artifactId>
+    	<version>${jandex.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.javassist</groupId>
+    	<artifactId>javassist</artifactId>
+    	<version>${javassist.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>javax.persistence</groupId>
+    	<artifactId>javax.persistence-api</artifactId>
+    	<version>${javax.persistence-api.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.jboss.logging</groupId>
+    	<artifactId>jboss-logging</artifactId>
+    	<version>${jboss-logging.version}</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.jboss.spec.javax.transaction</groupId>
+    	<artifactId>jboss-transaction-api_1.2_spec</artifactId>
+    	<version>${jboss-transaction-api_1.2_spec.version}</version>
+	</dependency>
+	
+  </dependencies>
+  
+  <build>
+  	<finalName>graduation_hibernate</finalName>
+  
+  	<resources>
+			<!-- 不打包hibernate的配置文件，会在 spring配置文件中配置-->
+		<resource>
+			<directory>src/main/resources</directory>
+			<targetPath>${project.build.directory}/classes</targetPath>  <!-- target/classes -->
+			<excludes>
+				<exclude>hibernate**</exclude>
+			</excludes>
+			<!-- filtering的作用是用环境变量、pom文件里定义的属性和指定文件里的属性
+			替换directory下属性文件中的占位符，即把属性文件中的${}换成具体属性值 -->
+			<filtering>true</filtering>
+		</resource>
+	</resources>
+  
+	<plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <excludes>
+            <exclude>**/session</exclude>			<!-- 打包时排除session文件夹 -->
+            <exclude>**/session/*</exclude>			<!-- 打包时排除session文件夹里的文件 -->
+<!-- 若是只排除文件夹，若是里面有文件就没有用。若是只排除文件夹里的文件，就会有一个空文件夹。所以需要配合使用 -->
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

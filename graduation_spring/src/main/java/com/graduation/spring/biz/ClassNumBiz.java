@@ -15,16 +15,16 @@ import com.graduation.hibernate.entity.Student;
 
 public interface ClassNumBiz {
 
-	public ArrayList<ClassNum> getAllClass();
+	ArrayList<ClassNum> getAllClass();
 	
-	public ClassNum search(ClassNum classNum);
+	ClassNum search(ClassNum classNum);
 	
-	public boolean addStudent(Student stu, String classNum);
+	boolean addStudent(Student stu, String classNum);
 	
-	public ArrayList<ClassNum> likeSearch(String selection);
+	ArrayList<ClassNum> likeSearch(String selection);
 	
-	public boolean updateClass(ClassNum classNum);
+	boolean updateClass(ClassNum classNum);
 	
-	public boolean deleteClass(Integer id);
+	boolean deleteClass(Integer id);
 	
 }

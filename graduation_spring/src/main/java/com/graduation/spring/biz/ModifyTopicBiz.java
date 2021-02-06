@@ -14,20 +14,20 @@ import com.graduation.hibernate.entity.ModifyTopic;
 
 public interface ModifyTopicBiz {
 
-	public ArrayList<ModifyTopic> getAllModifyTopic();
+	ArrayList<ModifyTopic> getAllModifyTopic();
 	
-	public ArrayList<ModifyTopic> likeSearch(String selection);
+	ArrayList<ModifyTopic> likeSearch(String selection);
 	
-	public boolean insertModify(ModifyTopic mt);
+	boolean insertModify(ModifyTopic mt);
 	
-	public ArrayList<ModifyTopic> getAdminCheckTopic();
+	ArrayList<ModifyTopic> getAdminCheckTopic();
 	
-	public boolean adminAgreeModify(Integer id, String opinion);
+	boolean adminAgreeModify(Integer id, String opinion);
 	
-	public boolean adminDisagreeModify(Integer id, String opinion);
+	boolean adminDisagreeModify(Integer id, String opinion);
 	
-	public boolean tchAgreeModify(Integer id, String opinion);
+	boolean tchAgreeModify(Integer id, String opinion);
 	
-	public boolean tchDisagreeModify(Integer id, String opinion);
+	boolean tchDisagreeModify(Integer id, String opinion);
 	
 }

@@ -14,12 +14,12 @@ import com.graduation.hibernate.entity.Description;
 
 public interface DescriptionBiz {
 
-	public boolean insertData(Description data);
+	boolean insertData(Description data);
 	
-	public ArrayList<Description> getDataByTopicId(Integer topicId);
+	ArrayList<Description> getDataByTopicId(Integer topicId);
 	
-	public boolean saveData(Description data);
+	boolean saveData(Description data);
 	
-	public Description getDataById(Integer id);
+	Description getDataById(Integer id);
 	
 }

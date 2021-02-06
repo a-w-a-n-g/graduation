@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+        
+<struts>
+	
+	<package name="admin" extends="index">
+		
+		<action name="admin_index">
+			<result>/WEB-INF/pages/admin/admin-index.jsp</result>
+			<result name="index" type="redirect">/index.jsp</result>
+			<interceptor-ref name="adminInterceptor"></interceptor-ref>
+		</action>
+		
+		<action name="home">
+			<result>/WEB-INF/pages/admin/home.jsp</result>
+		</action>
+		
+		<action name="editPsw" class="editPasswordAction" method="editPsw"></action>
+		
+		<action name="manageStu">
+			<result>/WEB-INF/pages/admin/manageStudent.jsp</result>
+		</action>
+		<action name="manageDep">
+			<result>/WEB-INF/pages/admin/manageDepartment.jsp</result>
+		</action>
+		<action name="manageMajor">
+			<result>/WEB-INF/pages/admin/manageMajor.jsp</result>
+		</action>
+		<action name="manageClass">
+			<result>/WEB-INF/pages/admin/manageClass.jsp</result>
+		</action>
+		<action name="manageTeacher">
+			<result>/WEB-INF/pages/admin/manageTeacher.jsp</result>
+		</action>
+		<action name="adminCheck">
+			<result>/WEB-INF/pages/admin/check.jsp</result>
+		</action>
+		
+		<action name="getAllStu" class="manageStudentAction" method="getAllStu"></action>
+		<action name="deleteStu" class="manageStudentAction" method="deleteStu"></action>
+		<action name="updateStu" class="manageStudentAction" method="updateStu"></action>
+		<action name="insertStu" class="manageStudentAction" method="insertStu"></action>
+		
+		<action name="getAllDpm" class="manageDepartmentAction" method="getAllDpm"></action>
+		<action name="deleteDpm" class="manageDepartmentAction" method="deleteDpm"></action>
+		<action name="updateDpm" class="manageDepartmentAction" method="updateDpm"></action>
+		<action name="insertDpm" class="manageDepartmentAction" method="insertDpm"></action>
+		
+		<action name="getAllMajor" class="manageMajorAction" method="getAllMajor"></action>
+		<action name="deleteMajor" class="manageMajorAction" method="deleteMajor"></action>
+		<action name="updateMajor" class="manageMajorAction" method="updateMajor"></action>
+		<action name="insertMajor" class="manageMajorAction" method="insertMajor"></action>
+		
+		<action name="getAllClass" class="manageClassAction" method="getAllClass"></action>
+		<action name="deleteClass" class="manageClassAction" method="deleteClass"></action>
+		<action name="updateClass" class="manageClassAction" method="updateClass"></action>
+		<action name="insertClass" class="manageClassAction" method="insertClass"></action>
+		
+		<action name="getAllTeacher" class="manageTeacherAction" method="getAllTeacher"></action>
+		<action name="deleteTeacher" class="manageTeacherAction" method="deleteTeacher"></action>
+		<action name="updateTeacher" class="manageTeacherAction" method="updateTeacher"></action>
+		<action name="insertTeacher" class="manageTeacherAction" method="insertTeacher"></action>
+		
+		<action name="getAllAdminCheck" class="manageAdminCheckAction" method="getAllAdminCheck"></action>
+		<action name="adminAgreeModify" class="manageAdminCheckAction" method="agreeModify"></action>
+		<action name="adminDisagreeModify" class="manageAdminCheckAction" method="disagreeModify"></action>
+		
+	</package>
+	
+</struts>

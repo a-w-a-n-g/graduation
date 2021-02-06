@@ -14,12 +14,12 @@ import com.graduation.hibernate.entity.GuidanceRecord;
 
 public interface GuidanceRecordBiz {
 
-	public boolean insertData(GuidanceRecord data);
+	boolean insertData(GuidanceRecord data);
 	
-	public ArrayList<GuidanceRecord> getDataByTopicId(Integer topicId);
+	ArrayList<GuidanceRecord> getDataByTopicId(Integer topicId);
 	
-	public boolean saveData(GuidanceRecord data);
+	boolean saveData(GuidanceRecord data);
 	
-	public GuidanceRecord getDataById(Integer id);
+	GuidanceRecord getDataById(Integer id);
 	
 }

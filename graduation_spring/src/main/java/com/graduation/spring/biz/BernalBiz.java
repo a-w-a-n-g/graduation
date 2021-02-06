@@ -14,12 +14,12 @@ import com.graduation.hibernate.entity.Bernal;
 
 public interface BernalBiz {
 
-	public boolean insertData(Bernal data);
+	boolean insertData(Bernal data);
 	
-	public ArrayList<Bernal> getDataByTopicId(Integer topicId);
+	ArrayList<Bernal> getDataByTopicId(Integer topicId);
 	
-	public boolean saveData(Bernal data);
+	boolean saveData(Bernal data);
 	
-	public Bernal getDataById(Integer id);
+	Bernal getDataById(Integer id);
 	
 }
